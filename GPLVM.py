@@ -32,7 +32,7 @@ class GPLVM:
 	def optimise_GP_kernel(self):
 		"""optimisation of the GP's kernel parameters"""
 		self.GP.find_kernel_params()
-		print self.GP.marginal(), 0.5*np.sum(np.square(self.GP.X))
+		print(self.GP.marginal(), 0.5*np.sum(np.square(self.GP.X)))
 	
 	def ll(self,xx,i):
 		"""The log likelihood function - used when changing the ith latent variable to xx"""
@@ -145,7 +145,7 @@ if __name__=="__main__":
 		def __call__(self,w):
 			self.counter +=1
 			if not self.counter%self.print_interval:
-				print self.counter, 'iterations, cost: ',myGPLVM.GP.get_params()
+				print(self.counter, 'iterations, cost: ',myGPLVM.GP.get_params())
 				plot_current()
 				
 	cb = callback(100)
